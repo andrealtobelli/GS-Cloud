@@ -21,6 +21,7 @@ AquaRescue é uma solução inovadora desenvolvida para mitigar os impactos dos 
 ## Links Úteis
 
 - 🎥 [Assista no YouTube](https://youtu.be/Qz0IRzeb0dc)
+- ♨️ [Repositório de Java](https://github.com/andrealtobelli/GS-Java)
 
 ---
 
@@ -167,9 +168,10 @@ docker logs -f oracle-db
 ```
 
 # CRUD GS 
-Aqui estão os POSTs para as demais operações como PUT basta ajustar o post para a maneira que deseja alterar.
+Aqui estão os POSTs e PUTs para as demais operações só é necessário o ID gerado após a criação.
 
 ## Usuários
+POST
 
 ```json
 {
@@ -179,10 +181,22 @@ Aqui estão os POSTs para as demais operações como PUT basta ajustar o post pa
   "tipo": "ONG"
 }
 ```
+PUT
+
+```json
+{
+  "nome": "Enrico",
+  "email": "enricodelguerra@gmail.com",
+  "senha": "654321",
+  "tipo": "ONG"
+}
+```
 
 ---
 
 ## Comunidade
+
+POST 
 
 ```json
 {
@@ -192,11 +206,21 @@ Aqui estão os POSTs para as demais operações como PUT basta ajustar o post pa
   "qtHabitantes": 2000
 }
 ```
+PUT
 
+```json
+{
+  "nome": "COMUNIDADE x",
+  "latitude": 0.14000,
+  "longitude": 0.1234234,
+  "qtHabitantes": 5000
+}
+```
 ---
 
 ## Previsões
 
+POST
 ```json
 {
   "comunidadeId": 1,
@@ -206,9 +230,23 @@ Aqui estão os POSTs para as demais operações como PUT basta ajustar o post pa
   "dataPrevisao": "2025-06-02T04:26:46"
 }
 ```
+
+PUT
+
+```json
+{
+  "comunidadeId": 1,
+  "temperatura": 22.0,
+  "umidade": 100.0,
+  "volumePrevisto": 80.0,
+  "dataPrevisao": "2025-06-02T04:26:46"
+}
+```
 ---
 
 ## Dados Meteorológicos
+
+POST
 
 ```json
 {
@@ -225,10 +263,28 @@ Aqui estão os POSTs para as demais operações como PUT basta ajustar o post pa
   "chuva": 0.1
 }
 ```
+PUT
 
+```json
+{
+  "comunidadeId": 1,
+  "dataHora": "2025-06-02T16:40:55.129Z",
+  "temperatura": 0.1,
+  "umidade": 0.5,
+  "ptoOrvalho": 0.1,
+  "pressao": 0.5,
+  "ventoVeloc": 0.7,
+  "ventoDirecao": 0.6,
+  "ventoRajada": 0.1,
+  "radiacao": 0.3,
+  "chuva": 0.1
+}
+```
 ---
 
 ## Log de Cálculo
+
+POST
 
 ```json
 {
@@ -239,6 +295,19 @@ Aqui estão os POSTs para as demais operações como PUT basta ajustar o post pa
   "dataCalculo": "2025-06-02T16:41:28.620Z"
 }
 ```
+
+PUT
+
+```json
+{
+  "comunidadeId": 1,
+  "qtHabitantes": 1073741824,
+  "consumoPorPessoa": 0.1,
+  "totalVolume": 0.1,
+  "dataCalculo": "2025-06-02T16:41:28.620Z"
+}
+```
+
 ---
 
 ## ✅ Resultado Final
