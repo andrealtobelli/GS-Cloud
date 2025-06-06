@@ -131,6 +131,79 @@ docker logs -f aquarescue-api
 docker logs -f oracle-db
 ```
 
+# CRUD GS 
+Aqui estão os POSTs para as demais operações como PUT basta ajustar o post para a maneira que deseja alterar.
+
+## Usuários
+
+```json
+{
+  "nome": "Enrico",
+  "email": "enrico@gmail.com",
+  "senha": "123456",
+  "tipo": "ONG"
+}
+```
+
+---
+
+## Comunidade
+
+```json
+{
+  "nome": "A COMUNIDADE",
+  "latitude": 0.14000,
+  "longitude": 0.1234234,
+  "qtHabitantes": 2000
+}
+```
+
+---
+
+## Previsões
+
+```json
+{
+  "comunidadeId": 1,
+  "temperatura": 25.0,
+  "umidade": 80.0,
+  "volumePrevisto": 100.0,
+  "dataPrevisao": "2025-06-02T04:26:46"
+}
+```
+---
+
+## Dados Meteorológicos
+
+```json
+{
+  "comunidadeId": 1,
+  "dataHora": "2025-06-02T16:40:55.129Z",
+  "temperatura": 0.1,
+  "umidade": 0.1,
+  "ptoOrvalho": 0.1,
+  "pressao": 0.1,
+  "ventoVeloc": 0.1,
+  "ventoDirecao": 0.1,
+  "ventoRajada": 0.1,
+  "radiacao": 0.1,
+  "chuva": 0.1
+}
+```
+
+---
+
+## Log de Cálculo
+
+```json
+{
+  "comunidadeId": 1,
+  "qtHabitantes": 1073741824,
+  "consumoPorPessoa": 0.1,
+  "totalVolume": 0.1,
+  "dataCalculo": "2025-06-02T16:41:28.620Z"
+}
+```
 ---
 
 ## ✅ Resultado Final
@@ -141,6 +214,3 @@ docker logs -f oracle-db
 
 ---
 
-## 📬 Contato
-
-Projeto desenvolvido por **Leticia Cristina** para a disciplina **Java Advanced** – FIAP 💙
