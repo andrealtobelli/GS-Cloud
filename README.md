@@ -20,9 +20,13 @@ AquaRescue é uma solução inovadora desenvolvida para mitigar os impactos dos 
 
 ## Links Úteis
 
-- 🎥 [Assista no YouTube](https://youtu.be/Qz0IRzeb0dc)
+- 🎥 [Projeto Cloud](https://youtu.be/Qz0IRzeb0dc)
 - ♨️ [Repositório de Java](https://github.com/andrealtobelli/GS-Java)
 
+## Link extra
+
+- 🎥 [Pitch AquaRescue](https://youtu.be/72TR3quH2Dg)
+  
 ---
 
 ## ✉️ Objetivo do Projeto
@@ -53,7 +57,7 @@ O objetivo do AquaRescue é fornecer uma interface centralizada para coleta, cá
 ### 1. Clonar o projeto
 
 ```bash
-git clone https://github.com/seu-usuario/aquarescue.git
+https://github.com/andrealtobelli/GS-Java.git
 ```
 
 ---
