@@ -187,7 +187,7 @@ docker logs -f oracle-db
 ```
 
 # CRUD GS 
-Aqui estão os POSTs e PUTs para as demais operações só é necessário o ID gerado após a criação.(arquivo com as operações no repositório)
+Aqui estão os POSTs e PUTs, para as demais operações só é necessário o ID gerado após a criação.(arquivo com as operações no repositório)
 
 
 ## Usuários
