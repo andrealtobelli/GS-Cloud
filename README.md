@@ -3,16 +3,30 @@
 
 Este projeto containeriza a aplicação **AquaRescue**, desenvolvida com Spring Boot e conectada a um banco Oracle. A solução é composta por dois containers Docker: um para a aplicação e outro para o banco de dados Oracle XE, seguindo boas práticas de infraestrutura como código.
 
+AquaRescue é uma solução inovadora desenvolvida para mitigar os impactos dos eventos climáticos extremos nas comunidades mais vulneráveis, por meio do monitoramento, previsão e gestão eficiente de dados hidrometeorológicos. Essa aplicação conta com uma API RESTful desenvolvida em Java com Spring Boot, integrando persistência em banco Oracle, autenticação com JWT e documentação via Swagger.
+
 ---
 
 ## 📦 Estrutura da Solução
 
-- ✅ Container da aplicação Java (com `Dockerfile` personalizado)
+- ✅ Container da aplicação Java (com `Dockerfile`)
 - ✅ Container Oracle XE (imagem pública)
 - ✅ Integração entre aplicação e banco de dados
 - ✅ Volume para persistência de dados
 - ✅ Uso de variáveis de ambiente
 - ✅ Acesso via navegador ao Swagger UI
+
+---
+
+## Links Úteis
+
+- 🎥 [Assista no YouTube](https://youtu.be/V7xjtWvw6hc)
+
+---
+
+## ✉️ Objetivo do Projeto
+
+O objetivo do AquaRescue é fornecer uma interface centralizada para coleta, cálculo e previsão de dados meteorológicos, permitindo que ONGs e comunidades acompanhem condições climáticas e tomem decisões com base em dados.
 
 ---
 
@@ -47,16 +61,30 @@ cd aquarescue
 ### 2. Subir o container Oracle XE
 
 ```bash
-docker run -d   --name oracle-db   -p 1521:1521   -p 5500:5500   -e ORACLE_PWD=admin123   -e ORACLE_CHARACTERSET=AL32UTF8   -v oracle-data:/opt/oracle/oradata   container-registry.oracle.com/database/express:21.3.0-xe
+docker run -d \
+  --name oracle-db \
+  -p 1521:1521 \
+  -p 5500:5500 \
+  -e ORACLE_PWD=admin123 \
+  -e ORACLE_CHARACTERSET=AL32UTF8 \
+  -v oracle-data:/opt/oracle/oradata \
+  container-registry.oracle.com/database/express:21.3.0-xe
 ```
 
 ---
 
 ### 3. Criar imagem e rodar o container da aplicação
-
+Construir imagem personalizada
 ```bash
 docker build -t aquarescue-api .
-docker run -d   --name aquarescue-api   -p 8080:8080   --link oracle-db   aquarescue-api
+```
+Rodar o container Java com link para Oracle
+```bash
+docker run -d \
+  --name aquarescue-api \
+  -p 8080:8080 \
+  --link oracle-db \
+  aquarescue-api
 ```
 
 ---
@@ -102,9 +130,16 @@ ENTRYPOINT ["java", "-jar", "app.jar"]
 
 ## 💾 Configuração do Banco Oracle
 
-- Usuário: `system`
-- Senha: `admin123`
 - JDBC: `jdbc:oracle:thin:@oracle-db:1521/XEPDB1`
+ 
+| Campo               | Valor                       |
+| ------------------- | --------------------------- |
+| **Tipo de conexão** | **Service name** (não SID!) |
+| **Nome do serviço** | `XEPDB1`                    |
+| **Usuário**         | `system`                    |
+| **Senha**           | `admin123`                  |
+| **Host**            | `<IP_DA_SUA_VM>`            |
+| **Porta**           | `1521`                      |
 
 ---
 
@@ -214,3 +249,8 @@ Aqui estão os POSTs para as demais operações como PUT basta ajustar o post pa
 
 ---
 
+## 👥 Desenvolvedores
+
+- Leticia Cristina Dos Santos Passos RM: 555241
+- André Rogério Vieira Pavanela Altobelli Antunes RM: 554764
+- Enrico Figueiredo Del Guerra RM: 558604
