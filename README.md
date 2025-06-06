@@ -20,7 +20,7 @@ AquaRescue é uma solução inovadora desenvolvida para mitigar os impactos dos 
 
 ## Links Úteis
 
-- 🎥 [Assista no YouTube](https://youtu.be/V7xjtWvw6hc)
+- 🎥 [Assista no YouTube](https://youtu.be/Qz0IRzeb0dc)
 
 ---
 
@@ -53,7 +53,6 @@ O objetivo do AquaRescue é fornecer uma interface centralizada para coleta, cá
 
 ```bash
 git clone https://github.com/seu-usuario/aquarescue.git
-cd aquarescue
 ```
 
 ---
@@ -76,6 +75,7 @@ docker run -d \
 ### 3. Criar imagem e rodar o container da aplicação
 Construir imagem personalizada
 ```bash
+cd aquarescue
 docker build -t aquarescue-api .
 ```
 Rodar o container Java com link para Oracle
