@@ -1,0 +1,128 @@
+CRUD GS 
+Aqui estão os POSTs, para as demais operações como PUT basta ajustar o post para a maneira que deseja alterar.
+
+Usuários
+
+POST 
+
+{
+  "nome": "Enrico",
+  "email": "enrico@gmail.com",
+  "senha": "123456",
+  "tipo": "ONG"
+}
+
+PUT
+
+{
+  "nome": "Enrico",
+  "email": "enricodelguerra@gmail.com",
+  "senha": "654321",
+  "tipo": "ONG"
+}
+
+---
+
+Comunidade
+
+POST
+
+{
+  "nome": "A COMUNIDADE",
+  "latitude": 0.14000,
+  "longitude": 0.1234234,
+  "qtHabitantes": 2000
+}
+
+PUT
+
+{
+  "nome": "COMUNIDADE x",
+  "latitude": 0.14000,
+  "longitude": 0.1234234,
+  "qtHabitantes": 5000
+}
+
+---
+
+Previsões
+
+POST
+
+{
+  "comunidadeId": 1,
+  "temperatura": 25.0,
+  "umidade": 80.0,
+  "volumePrevisto": 100.0,
+  "dataPrevisao": "2025-06-02T04:26:46"
+}
+
+PUT
+
+{
+  "comunidadeId": 1,
+  "temperatura": 22.0,
+  "umidade": 100.0,
+  "volumePrevisto": 80.0,
+  "dataPrevisao": "2025-06-02T04:26:46"
+}
+
+---
+
+Dados Meteorológicos
+
+POST
+
+{
+  "comunidadeId": 1,
+  "dataHora": "2025-06-02T16:40:55.129Z",
+  "temperatura": 0.1,
+  "umidade": 0.1,
+  "ptoOrvalho": 0.1,
+  "pressao": 0.1,
+  "ventoVeloc": 0.1,
+  "ventoDirecao": 0.1,
+  "ventoRajada": 0.1,
+  "radiacao": 0.1,
+  "chuva": 0.1
+}
+
+PUT
+
+{
+  "comunidadeId": 1,
+  "dataHora": "2025-06-02T16:40:55.129Z",
+  "temperatura": 0.1,
+  "umidade": 0.5,
+  "ptoOrvalho": 0.1,
+  "pressao": 0.5,
+  "ventoVeloc": 0.7,
+  "ventoDirecao": 0.6,
+  "ventoRajada": 0.1,
+  "radiacao": 0.3,
+  "chuva": 0.1
+}
+
+---
+
+Log de Cálculo
+
+POST
+
+{
+  "comunidadeId": 1,
+  "qtHabitantes": 1073741824,
+  "consumoPorPessoa": 0.1,
+  "totalVolume": 0.1,
+  "dataCalculo": "2025-06-02T16:41:28.620Z"
+}
+
+PUT
+
+{
+  "comunidadeId": 1,
+  "qtHabitantes": 1073741824,
+  "consumoPorPessoa": 0.1,
+  "totalVolume": 0.1,
+  "dataCalculo": "2025-06-02T16:41:28.620Z"
+}
